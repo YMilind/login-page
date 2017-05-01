@@ -20,8 +20,8 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 		User user = new User(username, password);
 
-		LoginDAO loginDAO = new LoginDAO();
-		Boolean loginSuccessful = loginDAO.validateUser(user);
+		UserDAO userDAO = new UserDAO();
+		Boolean loginSuccessful = userDAO.validateUser(user);
 
 		request.setAttribute("loginSuccessful", loginSuccessful);
 		request.setAttribute("username", username);
